@@ -38,14 +38,12 @@ ark "gdash" do
   notifies :run, "bash[bundle_install]", :immediate
 end
 
-bash "bundle_install" do
-  action :nothing
-  cwd node["gdash"]["base_dir"]
-  user "root"
-  code <<-EOF
-    set -x
-    bundle install
-  EOF
+# install gdash required bundles 
+%{sinatra redcarpet less therubyracer json}.each do |gem_name|
+  gem_package svc
+end
+gem_package "graphite_graph" do
+  version "0.0.8"
 end
 
 # unintelligently assumes gdash base_dir ends in gdash
