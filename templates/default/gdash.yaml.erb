@@ -1,15 +1,14 @@
 :graphite: <%= node.gdash.graphite_url %>
 :templatedir: <%= node.gdash.templatedir %>
-<% if node.gdash.prefix -%>
-:prefix <%= node.gdash.prefix %>
-<% end %>
 <% if node.gdash.basic_auth -%>
 :username: <%= node.gdash.username %>
 :password: <%= node.gdash.password %>
 <% end -%>
 :options:
   :title: <%= node.gdash.title %>
+<% if node.gdash.prefix -%>
   :prefix: <%= node.gdash.prefix %>
+<% end %>
   :refresh_rate: <%= node.gdash.refresh_rate %>
   :graph_columns: <%= node.gdash.columns %>
   :graph_width: 500
