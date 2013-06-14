@@ -50,8 +50,8 @@ end
 
 # unintelligently assumes gdash base_dir ends in gdash
 if node['recipes'].include? "infra-graphing::server"
-  link "#{node[:graphite][:doc_dir]}/gdash" do
-    to "#{node[:gdash][:base_dir]}"
+  link "#{node['graphite']['doc_dir']}/gdash" do
+    to node["gdash"]["base_dir"]
   end
 end
 
