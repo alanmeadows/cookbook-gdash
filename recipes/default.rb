@@ -1,7 +1,8 @@
 #
-# Cookbook Name:: graphite
+# Cookbook Name:: gdash
 # Recipe:: default
 #
+# Copyright 2013, AT&T Services, Inc.
 # Copyright 2011, Heavy Water Software Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,7 +27,6 @@ gem_package "bundler"
 #--------------------------
 # expand gdash
 #--------------------------
-
 
 ark "gdash" do
   url node['gdash']['uri']
