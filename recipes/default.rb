@@ -35,12 +35,11 @@ ark "gdash" do
   action :put
   owner node["gdash"]["owner"]
   group node["gdash"]["group"]
-  notifies :run, "bash[bundle_install]", :immediate
 end
 
 # install gdash required bundles 
-%{sinatra redcarpet less therubyracer json}.each do |gem_name|
-  gem_package svc
+%w{sinatra redcarpet less therubyracer json}.each do |gem_name|
+  gem_package gem_name
 end
 gem_package "graphite_graph" do
   version "0.0.8"
