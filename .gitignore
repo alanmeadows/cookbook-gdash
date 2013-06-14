@@ -1,0 +1,7 @@
+.bundle
+.cache
+.kitchen
+bin
+Berksfile.lock
+.*.swp
+.cookbooks
